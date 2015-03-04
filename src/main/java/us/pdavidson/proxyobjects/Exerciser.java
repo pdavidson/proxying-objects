@@ -1,30 +1,20 @@
 package us.pdavidson.proxyobjects;
 
-import java.util.Random;
-
 public class Exerciser {
-    private static final Random random = new Random();
 
-    private final SpecialTemplate specialTemplate1;
-    private final SpecialTemplate specialTemplate2;
 
     private SpecialTemplate specialTemplate;
+    private final TemplateSwitchingScope scope;
 
 
-    public Exerciser(SpecialTemplate specialTemplate2,
-                     SpecialTemplate specialTemplate1) {
-        this.specialTemplate2 = specialTemplate2;
-        this.specialTemplate1 = specialTemplate1;
-
+    public Exerciser(SpecialTemplate specialTemplate, TemplateSwitchingScope scope) {
+        this.specialTemplate = specialTemplate;
+        this.scope = scope;
         this.electNewLeader();
     }
 
     public void electNewLeader() {
-        if (random.nextBoolean()) {
-            specialTemplate = specialTemplate1;
-        } else {
-            specialTemplate = specialTemplate2;
-        }
+        scope.electNewLeader();
     }
 
     public void exerciseTemplate() {
