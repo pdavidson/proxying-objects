@@ -19,7 +19,6 @@ public class SpecialTemplate {
         return name;
     }
 
-
     public Boolean couldWeBeFriends(String otherName){
         return random.nextBoolean();
     }

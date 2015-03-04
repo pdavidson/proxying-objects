@@ -4,17 +4,16 @@ public class Exerciser {
 
 
     private SpecialTemplate specialTemplate;
-    private final TemplateSwitchingScope scope;
+    private final RoutingInvokerHandler routingInvokerHandler;
 
-
-    public Exerciser(SpecialTemplate specialTemplate, TemplateSwitchingScope scope) {
+    public Exerciser(SpecialTemplate specialTemplate, RoutingInvokerHandler routingInvokerHandler) {
         this.specialTemplate = specialTemplate;
-        this.scope = scope;
+        this.routingInvokerHandler = routingInvokerHandler;
         this.electNewLeader();
     }
 
     public void electNewLeader() {
-        scope.electNewLeader();
+        routingInvokerHandler.electNewLeader();
     }
 
     public void exerciseTemplate() {
